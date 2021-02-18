@@ -1,0 +1,24 @@
+{% load static %}<!--remember to reload the server for css-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'weekday/styles.css' %}" rel="stylesheet"><!--we could give full url but why put so much effort when Django can do it for you-->
+    <title>Today</title>
+</head>
+<body>
+    <h1>Today is {{date}}</h1>
+    <h1>Weekday is {{weekday}}</h1>
+    <div id="weekday">
+    <h1>Is today New Year? </h1>
+    {% if newyr %}
+        <h1>YES</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}<!--coz indentation is optional here, we need to tell when our if is ending-->
+</div>
+</body>
+</html>
